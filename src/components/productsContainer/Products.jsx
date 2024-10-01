@@ -8,7 +8,7 @@ export default function Products() {
         <div className="lws-productCard">
           <img
             className="lws-productImage"
-            src="https://i.dummyjson.com/data/products/59/thumbnail.jpg"
+            src="https://images.pexels.com/photos/3907507/pexels-photo-3907507.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt="product"
           />
           <div className="p-4 space-y-2">
@@ -31,8 +31,9 @@ export default function Products() {
         <div className="lws-productCard">
           <img
             className="lws-productImage"
-            src="https://i.dummyjson.com/data/products/40/thumbnail.jpg"
-            alt="product"
+            src="https://images.pexels.com/photos/3612182/pexels-photo-3612182.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="product" 
+            
           />
           <div className="p-4 space-y-2">
             <h4 className="lws-productName">Women Winter Clothes</h4>
