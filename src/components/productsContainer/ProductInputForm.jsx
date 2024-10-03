@@ -1,8 +1,10 @@
 import { Fragment, useState } from "react";
+import { useDispatch } from "react-redux";
+import { ADDED } from "../../redux/products/actionType";
 
-export default function ProductInputForm({ onProducts }) {
+export default function ProductInputForm() {
+  const dispatch = useDispatch();
   const [products, setProducts] = useState({
-    id: crypto.randomUUID(),
     name: "",
     category: "",
     image: "",
@@ -10,7 +12,7 @@ export default function ProductInputForm({ onProducts }) {
     quantity: "",
   });
 
-  function handdleChange(event) {
+  function handleChange(event) {
     const name = event.target.name;
     let value = event.target.value;
     setProducts({
@@ -21,7 +23,18 @@ export default function ProductInputForm({ onProducts }) {
 
   function handleClick(event) {
     event.preventDefault();
-    onProducts(products);
+    dispatch({
+      type: ADDED,
+      payload: products,
+    });
+    // clear form input
+    setProducts({
+      name: "",
+      category: "",
+      image: "",
+      price: "",
+      quantity: "",
+    });
   }
 
   return (
@@ -40,7 +53,7 @@ export default function ProductInputForm({ onProducts }) {
                 type="text"
                 name="name"
                 value={products.name}
-                onChange={handdleChange}
+                onChange={handleChange}
                 required
               />
             </div>
