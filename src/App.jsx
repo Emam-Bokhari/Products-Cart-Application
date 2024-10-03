@@ -8,6 +8,7 @@ import store from "./redux/store"
 
 export default function App() {
   const [isCartView, setIsCartView] = useState(false);
+  
 
   function handleNavClick(view) {
     if (view === "home") {
@@ -17,18 +18,14 @@ export default function App() {
     }
   }
 
-  // add products
-  function handleProducts(products) {
-    console.log(products);
-  }
-
+ 
   return (
     <Provider store={store} >
       <Navbar onNavClick={handleNavClick} />
       <main className="py-16">
         <div className="productWrapper">
           {isCartView ? <Cart /> : <Products />}
-          {!isCartView && <ProductInputForm onProducts={handleProducts} />}
+          {!isCartView && <ProductInputForm  />}
         </div>
       </main>
     </Provider>

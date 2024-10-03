@@ -66,7 +66,7 @@ export default function ProductInputForm() {
                 type="text"
                 name="category"
                 value={products.category}
-                onChange={handdleChange}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -79,7 +79,7 @@ export default function ProductInputForm() {
                 type="text"
                 name="image"
                 value={products.image}
-                onChange={handdleChange}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -94,7 +94,7 @@ export default function ProductInputForm() {
                   id="lws-inputPrice"
                   name="price"
                   value={products.price}
-                  onChange={handdleChange}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -107,7 +107,7 @@ export default function ProductInputForm() {
                   id="lws-inputQuantity"
                   name="quantity"
                   value={products.quantity}
-                  onChange={handdleChange}
+                  onChange={handleChange}
                   required
                 />
               </div>
