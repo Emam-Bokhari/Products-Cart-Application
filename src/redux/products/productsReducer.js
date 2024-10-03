@@ -8,9 +8,11 @@ const productsReducer = (state = initialState, action) => {
         ...state,
         {
           id: crypto.randomUUID(),
-          data: action.payload,
+          ...action.payload
         },
       ];
+      default:
+        return state
   }
 };
 
