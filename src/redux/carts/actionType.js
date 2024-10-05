@@ -1,1 +1,1 @@
-export const ADDED = "cart/added";
+export const CART_ADDED = "cart/added";

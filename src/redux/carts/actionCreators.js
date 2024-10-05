@@ -1,8 +1,9 @@
-import { ADDED } from "./actionType";
+import { CART_ADDED } from "./actionType";
+
 
 export const added = (data) => {
   return {
-    type: ADDED,
+    type: CART_ADDED,
     payload: data,
   };
 };

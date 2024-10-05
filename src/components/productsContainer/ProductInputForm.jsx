@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
-import { ADDED } from "../../redux/products/actionType";
+
 
 export default function ProductInputForm() {
   const dispatch = useDispatch();
@@ -15,6 +15,12 @@ export default function ProductInputForm() {
   function handleChange(event) {
     const name = event.target.name;
     let value = event.target.value;
+
+    // convert to number price, and quantity
+    if (name === "price" || name === "quantity") {
+      value = parseFloat(value);
+    }
+
     setProducts({
       ...products,
       [name]: value,
@@ -24,7 +30,7 @@ export default function ProductInputForm() {
   function handleClick(event) {
     event.preventDefault();
     dispatch({
-      type: ADDED,
+      type: ,
       payload: products,
     });
     // clear form input

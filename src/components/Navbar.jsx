@@ -1,7 +1,12 @@
 import { Fragment } from "react";
 import Logo from "../assets/logo.png";
+import { useSelector } from "react-redux";
 
 export default function Navbar({ onNavClick }) {
+  const carts = useSelector((state) => state.carts);
+  
+  console.log(carts)
+
   return (
     <Fragment>
       <nav className="bg-[#171C2A] py-4">
@@ -26,8 +31,7 @@ export default function Navbar({ onNavClick }) {
               className="navHome"
               id="lws-home"
             >
-              {" "}
-              Home{" "}
+              Home
             </a>
             <a
               onClick={(event) => {
@@ -39,6 +43,7 @@ export default function Navbar({ onNavClick }) {
               id="lws-cart"
             >
               <i className="text-xl fa-sharp fa-solid fa-bag-shopping"></i>
+              {/* Display the total items in the cart */}
               <span id="lws-totalCart">0</span>
             </a>
           </div>

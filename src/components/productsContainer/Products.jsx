@@ -1,8 +1,18 @@
 import { Fragment } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { CART_ADDED } from "../../redux/carts/actionType";
+
 
 export default function Products() {
   const products = useSelector((state) => state.products);
+  const dispatch = useDispatch();
+
+  function handleAddCart() {
+    dispatch({
+      type:CART_ADDED,
+      payload:products,
+    });
+  }
 
   return (
     <Fragment>
@@ -25,7 +35,9 @@ export default function Products() {
                   QTY <span className="lws-quantity">{product?.quantity}</span>
                 </p>
               </div>
-              <button className="lws-btnAddToCart">Add To Cart</button>
+              <button onClick={handleAddCart} className="lws-btnAddToCart">
+                Add To Cart
+              </button>
             </div>
           </div>
         ))}

@@ -1,6 +1,6 @@
 export const initialState = [
   {
-    id: "1",
+    id: 1,
     name: "Walton Monitor",
     category: "Technology",
     image: "https://placehold.co/300",
@@ -8,7 +8,7 @@ export const initialState = [
     quantity: 6,
   },
   {
-    id: "2",
+    id: 2,
     name: "Asus Monitor",
     category: "Technology",
     image: "https://placehold.co/300",

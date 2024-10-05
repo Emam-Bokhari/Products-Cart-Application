@@ -1,9 +1,11 @@
-import { ADDED } from "./actionType";
-import { initialState } from "./initialState";
+import { CART_ADDED } from "./actionType";
+
+
+export const initialState = [];
 
 export const cartsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case ADDED:
+    case CART_ADDED:
       return [
         ...state,
         {
