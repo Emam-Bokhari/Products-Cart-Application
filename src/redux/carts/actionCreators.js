@@ -1,9 +1,16 @@
-import { CART_ADDED } from "./actionType";
+import { ADD_TO_CART, DELETE_ITEM, REMOVE_FROM_CART } from "./actionType";
 
-
-export const added = (data) => {
+export const addCart = (product) => {
   return {
-    type: CART_ADDED,
-    payload: data,
+    type: ADD_TO_CART,
+    payload: product,
   };
 };
+
+export const removeCart = (product) => {
+  return {
+    type: REMOVE_FROM_CART,
+    payload: product,
+  };
+};
+
