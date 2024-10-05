@@ -1,4 +1,8 @@
-import { ADD_PRODUCT, ADD_PRODUCT_QUANTITY } from "./actionType";
+import {
+  ADD_PRODUCT,
+  ADD_PRODUCT_QUANTITY,
+  REMOVE_PRODUCT_QUANTITY,
+} from "./actionType";
 
 const initialState = [];
 
@@ -18,6 +22,18 @@ const productReducer = (state = initialState, action) => {
           return {
             ...item,
             quantity: item.quantity + 1,
+          };
+        }
+      });
+    case REMOVE_PRODUCT_QUANTITY:
+      return state.map((item) => {
+        if (action.payload.quantity <= 0) {
+          return state;
+        }
+        if (item.id === action.payload.id) {
+          return {
+            ...item,
+            quantity: item.quantity - 1,
           };
         }
       });
