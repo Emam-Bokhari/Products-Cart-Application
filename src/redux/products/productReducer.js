@@ -1,4 +1,5 @@
 import {
+  ADD_MANY_QUANTITY,
   ADD_PRODUCT,
   ADD_PRODUCT_QUANTITY,
   REMOVE_PRODUCT_QUANTITY,
@@ -24,6 +25,7 @@ const productReducer = (state = initialState, action) => {
             quantity: item.quantity + 1,
           };
         }
+        // return item;
       });
     case REMOVE_PRODUCT_QUANTITY:
       return state.map((item) => {
@@ -36,6 +38,17 @@ const productReducer = (state = initialState, action) => {
             quantity: item.quantity - 1,
           };
         }
+        // return item;
+      });
+    case ADD_MANY_QUANTITY:
+      return state.map((item) => {
+        if (item.id === action.payload.id) {
+          return {
+            ...item,
+            quantity: item.quantity + action.payload.cartQuantity,
+          };
+        }
+        // return item
       });
     default:
       return state;
