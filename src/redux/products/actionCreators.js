@@ -1,9 +1,8 @@
-import { PRODUCT_ADDED } from "./actionType";
+import { ADD_PRODUCT } from "./actionType";
 
-
-export const added = (data) => {
+export const addProduct = (product) => {
   return {
-    type: PRODUCT_ADDED,
-    payload: data,
+    type: ADD_PRODUCT,
+    payload: product,
   };
 };
