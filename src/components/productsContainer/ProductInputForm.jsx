@@ -1,5 +1,6 @@
 import { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/products/actionCreators";
 
 
 export default function ProductInputForm() {
@@ -29,10 +30,7 @@ export default function ProductInputForm() {
 
   function handleClick(event) {
     event.preventDefault();
-    dispatch({
-      type: ,
-      payload: products,
-    });
+    dispatch(addProduct(products));
     // clear form input
     setProducts({
       name: "",

@@ -4,8 +4,11 @@ import { useSelector } from "react-redux";
 
 export default function Navbar({ onNavClick }) {
   const carts = useSelector((state) => state.carts);
-  
-  console.log(carts)
+
+  const cartItem = carts.reduce(
+    (totalItem, item) => item.cartQuantity + totalItem,
+    0
+  );
 
   return (
     <Fragment>
@@ -44,7 +47,7 @@ export default function Navbar({ onNavClick }) {
             >
               <i className="text-xl fa-sharp fa-solid fa-bag-shopping"></i>
               {/* Display the total items in the cart */}
-              <span id="lws-totalCart">0</span>
+              <span id="lws-totalCart">{cartItem}</span>
             </a>
           </div>
         </div>

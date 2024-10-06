@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CART_ADDED } from "../../redux/carts/actionType";
+import { addCart } from "../../redux/carts/actionCreators";
+
 
 
 export default function Products() {
@@ -8,10 +9,7 @@ export default function Products() {
   const dispatch = useDispatch();
 
   function handleAddCart() {
-    dispatch({
-      type:CART_ADDED,
-      payload:products,
-    });
+    dispatch(addCart(products));
   }
 
   return (

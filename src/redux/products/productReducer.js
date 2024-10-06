@@ -7,7 +7,7 @@ import {
 
 const initialState = [];
 
-const productReducer = (state = initialState, action) => {
+export const productReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_PRODUCT:
       return [
@@ -55,4 +55,4 @@ const productReducer = (state = initialState, action) => {
   }
 };
 
-export default productReducer;
+
